@@ -13,23 +13,22 @@
 ![HiCMAE](figs/hicmae.png)
 
 Abstract:
-Audio-Visual Emotion Recognition (AVER) has garnered increasing attention in recent years for its critical role in creating emotion-
-ware intelligent machines. Previous efforts in this area are dominated by the supervised learning paradigm. Despite significant
-progress, supervised learning is meeting its bottleneck due to the longstanding data scarcity issue in AVER. Motivated by recent ad-
-vances in self-supervised learning, we propose Hierarchical Contrastive Masked Autoencoder (HiCMAE), a novel self-supervised
+Audio-Visual Emotion Recognition (AVER) has garnered increasing attention in recent years for its critical role in creating emotion-ware 
+intelligent machines. Previous efforts in this area are dominated by the supervised learning paradigm. Despite significant
+progress, supervised learning is meeting its bottleneck due to the longstanding data scarcity issue in AVER. Motivated by recent advances 
+in self-supervised learning, we propose Hierarchical Contrastive Masked Autoencoder (HiCMAE), a novel self-supervised
 framework that leverages large-scale self-supervised pre-training on vast unlabeled audio-visual data to promote the advancement
-of AVER. Following prior arts in self-supervised audio-visual representation learning, HiCMAE adopts two primary forms of self-
-supervision for pre-training, namely masked data modeling and contrastive learning. Unlike them which focus exclusively on
-top-layer representations while neglecting explicit guidance of intermediate layers, HiCMAE develops a three-pronged strategy to
-foster hierarchical audio-visual feature learning and improve the overall quality of learned representations. Firstly, it incorporates
-hierarchical skip connections between the encoder and decoder to encourage intermediate layers to learn more meaningful represen-
-tations and bolster masked audio-visual reconstruction. Secondly, hierarchical cross-modal contrastive learning is also exerted on
-intermediate representations to narrow the audio-visual modality gap progressively and facilitate subsequent cross-modal fusion.
-Finally, during downstream fine-tuning, HiCMAE employs hierarchical feature fusion to comprehensively integrate multi-level
-features from different layers. To verify the effectiveness of HiCMAE, we conduct extensive experiments on 9 datasets covering
-both categorical and dimensional AVER tasks. Experimental results show that our method significantly outperforms state-of-the-art
-supervised and self-supervised audio-visual methods, which indicates that HiCMAE is a powerful audio-visual emotion represen-
-tation learner.
+of AVER. Following prior arts in self-supervised audio-visual representation learning, HiCMAE adopts two primary forms of self-supervision 
+for pre-training, namely masked data modeling and contrastive learning. Unlike them which focus exclusively on top-layer representations 
+while neglecting explicit guidance of intermediate layers, HiCMAE develops a *three-pronged* strategy to foster *hierarchical* audio-visual 
+feature learning and improve the overall quality of learned representations. Firstly, it incorporates *hierarchical skip connections* between 
+the encoder and decoder to encourage intermediate layers to learn more meaningful representations and bolster masked audio-visual reconstruction. 
+Secondly, *hierarchical cross-modal contrastive learning* is also exerted on intermediate representations to narrow the audio-visual 
+modality gap progressively and facilitate subsequent cross-modal fusion. Finally, during downstream fine-tuning, HiCMAE employs 
+*hierarchical feature fusion* to comprehensively integrate multi-level features from different layers. To verify the effectiveness 
+of HiCMAE, we conduct extensive experiments on 9 datasets covering both categorical and dimensional AVER tasks. Experimental results 
+show that our method significantly outperforms state-of-the-art supervised and self-supervised audio-visual methods, which indicates that 
+**HiCMAE is a powerful audio-visual emotion representation learner**.
 
 
 ## 🚀 Main Results
