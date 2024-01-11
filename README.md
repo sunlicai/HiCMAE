@@ -35,7 +35,7 @@ tation learner.
 ## 🚀 Main Results
 
 <p align="center">
-  <img src="figs/radar_plot.png" width=80%> <br>
+  <img src="figs/radar_plot.png" width=65%> <br>
    Comparison with state-of-the-art audio-visual methods on 9 datasets.
 </p>
 
