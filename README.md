@@ -38,6 +38,8 @@ tation learner.
    Comparison with state-of-the-art audio-visual methods on 9 datasets.
 </p>
 
+Please check our arXiv paper to see detailed results on each dataset.
+
 
 ## 👀 Visualization
 
@@ -45,7 +47,7 @@ tation learner.
 
 ![Reconstruction](figs/reconstruction.png)
 
-Please check our paper to see details better.
+Please check our arXiv paper to see details better.
 
 ### ✨ t-SNE on CREMA-D
 
