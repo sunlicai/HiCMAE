@@ -12,6 +12,7 @@
 
 ![HiCMAE](figs/hicmae.png)
 
+Abstract:
 Audio-Visual Emotion Recognition (AVER) has garnered increasing attention in recent years for its critical role in creating emotion-
 ware intelligent machines. Previous efforts in this area are dominated by the supervised learning paradigm. Despite significant
 progress, supervised learning is meeting its bottleneck due to the longstanding data scarcity issue in AVER. Motivated by recent ad-
@@ -34,7 +35,7 @@ tation learner.
 ## 🚀 Main Results
 
 <p align="center">
-  <img src="figs/radar_plot.png" width=50%> <br>
+  <img src="figs/radar_plot.png" width=80%> <br>
    Comparison with state-of-the-art audio-visual methods on 9 datasets.
 </p>
 
