@@ -1,0 +1,122 @@
+absl-py==1.4.0
+addict==2.4.0
+appdirs==1.4.4
+audioread==3.0.0
+beautifulsoup4==4.12.2
+blessed==1.20.0
+brotlipy==0.7.0
+cachetools==5.3.1
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+chardet==5.2.0
+charset-normalizer==3.1.0
+click==8.1.3
+colorama==0.4.6
+contourpy @ file:///opt/conda/conda-bld/contourpy_1663827406301/work
+cryptography @ file:///croot/cryptography_1677533068310/work
+cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
+-e git+https://github.com/KaiyangZhou/Dassl.pytorch.git@c61a1b570ac6333bd50fb5ae06aea59002fb20bb#egg=dassl
+decorator==5.1.1
+decord==0.6.0
+einops==0.6.0
+entrypoints==0.3
+filelock==3.12.3
+flake8==3.7.9
+fonttools==4.25.0
+ftfy==6.1.1
+future==0.18.3
+fvcore==0.1.5.post20221221
+gdown==4.7.1
+google-auth==2.22.0
+google-auth-oauthlib==1.0.0
+gpustat==1.0.0
+grpcio==1.57.0
+idna @ file:///croot/idna_1666125576474/work
+importlib-metadata==6.0.0
+importlib-resources @ file:///tmp/build/80754af9/importlib_resources_1625135880749/work
+iopath==0.1.10
+isort==4.3.21
+joblib==1.2.0
+kiwisolver @ file:///croot/kiwisolver_1672387140495/work
+lazy_loader==0.1
+librosa==0.10.0.post2
+littleutils==0.2.2
+llvmlite==0.39.1
+loralib==0.1.2
+Markdown==3.4.1
+markdown-it-py==2.2.0
+MarkupSafe==2.1.3
+matplotlib @ file:///croot/matplotlib-suite_1678723872360/work
+mccabe==0.6.1
+mdurl==0.1.2
+mkl-fft==1.3.1
+mkl-random==1.2.2
+mkl-service==2.4.0
+mmcv==1.7.1
+model-index==0.1.11
+msgpack==1.0.5
+munkres==1.1.4
+numba==0.56.4
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+nvidia-ml-py==11.495.46
+oauthlib==3.2.2
+ogb==1.3.6
+olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
+opencv-python==4.7.0.72
+openmim==0.3.6
+ordered-set==4.1.0
+outdated==0.2.2
+packaging==23.0
+pandas==1.5.3
+Pillow @ file:///home/conda/feedstock_root/build_artifacts/pillow_1630696607296/work
+ply==3.11
+pooch @ file:///tmp/build/80754af9/pooch_1623324770023/work
+portalocker==2.7.0
+protobuf==3.20.3
+psutil==5.9.4
+pyasn1==0.5.0
+pyasn1-modules==0.3.0
+pycodestyle==2.5.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyflakes==2.1.1
+Pygments==2.14.0
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+pyparsing @ file:///opt/conda/conda-bld/pyparsing_1661452539315/work
+PyQt5-sip==12.11.0
+PySocks @ file:///tmp/build/80754af9/pysocks_1605305779399/work
+python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pytz==2022.7.1
+PyYAML==6.0
+regex==2023.8.8
+requests==2.28.2
+requests-oauthlib==1.3.1
+rich==13.3.2
+rsa==4.9
+scikit-learn @ file:///croot/scikit-learn_1676911643119/work
+scipy==1.10.0
+sip @ file:///tmp/abs_44cd77b_pu/croots/recipe/sip_1659012365470/work
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+soundfile==0.12.1
+soupsieve==2.5
+soxr==0.3.4
+tabulate==0.9.0
+tb-nightly==2.14.0a20230808
+tensorboard-data-server==0.7.1
+tensorboardX==2.6
+termcolor==2.2.0
+threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
+timm==0.4.12
+toml @ file:///tmp/build/80754af9/toml_1616166611790/work
+torch==1.10.1
+torchaudio==0.10.1
+torchvision==0.11.2
+tornado @ file:///opt/conda/conda-bld/tornado_1662061693373/work
+tqdm==4.65.0
+typing_extensions==4.7.1
+urllib3==1.26.15
+wcwidth==0.2.6
+Werkzeug==2.3.7
+wilds==1.2.2
+yacs==0.1.8
+yapf==0.29.0
+zipp @ file:///croot/zipp_1672387121353/work
