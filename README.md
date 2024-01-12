@@ -1,6 +1,6 @@
 # HiCMAE: Hierarchical Contrastive Masked Autoencoder for Self-Supervised Audio-Visual Emotion Recognition
 
-> [[arXiv]](https://arxiv.org/abs/2307.02227) <br>
+> [[arXiv]](https://arxiv.org/abs/2401.05698) <br>
 > [Licai Sun](https://sunlicai.github.io/), [Zheng Lian](https://scholar.google.com/citations?user=S34nWz0AAAAJ&hl=en), [Bin Liu](https://scholar.google.com/citations?user=UEB_5QEAAAAJ&hl=en), and [Jianhua Tao](https://scholar.google.com/citations?user=781jbHMAAAAJ&hl=en)<br>
 > University of Chinese Academy of Sciences & Institute of Automation, Chinese Academy of Sciences & Tsinghua University<br>
 
@@ -132,6 +132,14 @@ This project is built upon [VideoMAE](https://github.com/MCG-NJU/VideoMAE) and [
 
 If you think this project is helpful, please feel free to leave a star⭐️ and cite our paper:
 
-
-
+```
+@misc{sun2024hicmae,
+    title={HiCMAE: Hierarchical Contrastive Masked Autoencoder for Self-Supervised Audio-Visual Emotion Recognition},
+    author={Licai Sun and Zheng Lian and Bin Liu and Jianhua Tao},
+    year={2024},
+    eprint={2401.05698},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+```
 
