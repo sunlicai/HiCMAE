@@ -133,13 +133,11 @@ This project is built upon [VideoMAE](https://github.com/MCG-NJU/VideoMAE) and [
 If you think this project is helpful, please feel free to leave a star⭐️ and cite our paper:
 
 ```
-@misc{sun2024hicmae,
-    title={HiCMAE: Hierarchical Contrastive Masked Autoencoder for Self-Supervised Audio-Visual Emotion Recognition},
-    author={Licai Sun and Zheng Lian and Bin Liu and Jianhua Tao},
-    year={2024},
-    eprint={2401.05698},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+@article{sun2024hicmae,
+  title={HiCMAE: Hierarchical Contrastive Masked Autoencoder for Self-Supervised Audio-Visual Emotion Recognition},
+  author={Sun, Licai and Lian, Zheng and Liu, Bin and Tao, Jianhua},
+  journal={arXiv preprint arXiv:2401.05698},
+  year={2024}
 }
 ```
 
