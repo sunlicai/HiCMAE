@@ -1,0 +1,9 @@
+.pth
+saved/model/finetuning
+**/finetuning
+.cpp
+__pycache__
+**.pyc**
+**.pth**
+.pyc
+**/__pycache__

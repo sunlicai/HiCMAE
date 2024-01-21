@@ -29,9 +29,8 @@ do
     # path to pre-trained model
     MODEL_PATH="./saved/model/pretraining/${pretrain_dataset}/audio_visual/${model_dir}/checkpoint-${ckpt}.pth"
 
-    OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 \
-        --master_port 13296 \
-        run_class_finetuning_av.py \
+    #CUDA_VISIBLE_DEVICES=0 python run_class_finetuning_av.py \
+    CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 run_class_finetuning_av.py \
         --model avit_dim512_patch16_160_a256 \
         --data_set ${finetune_dataset^^} \
         --nb_classes ${num_labels} \
@@ -55,7 +54,6 @@ do
         --opt_betas 0.9 0.999 \
         --weight_decay 0.05 \
         --epochs ${epochs} \
-        --dist_eval \
         --test_num_segment 2 \
         --test_num_crop 2 \
         --num_workers 16 \
@@ -63,4 +61,3 @@ do
   done
 done
 echo "Done!"
-

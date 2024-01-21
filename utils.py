@@ -17,7 +17,7 @@ import random
 
 from tensorboardX import SummaryWriter
 
-
+#inf = torch.tensor(float('inf'))
 class SmoothedValue(object):
     """Track a series of values and provide access to smoothed values over a
     window or the global series average.
@@ -278,7 +278,7 @@ def init_distributed_mode(args):
         return
 
     args.distributed = True
-
+    
     torch.cuda.set_device(args.gpu)
     args.dist_backend = 'nccl'
     print('| distributed init (rank {}): {}, gpu {}'.format(

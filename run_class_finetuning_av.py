@@ -23,6 +23,8 @@ from utils import  multiple_samples_collate
 import utils
 import modeling_finetune_av
 
+import  torch.distributed as dist
+
 # https://blog.csdn.net/pumpkin96/article/details/127754736
 np.set_printoptions(threshold=np.inf)
 
@@ -511,7 +513,10 @@ def main(args, ds_init):
         assert model.gradient_accumulation_steps() == args.update_freq
     else:
         if args.distributed:
-            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], find_unused_parameters=False)
+            rank = int(os.getenv('LOCAL_RANK', '0'))
+            if not torch.distributed.is_initialized():
+                dist.init_process_group(backend='nccl', init_method='tcp://localhost:23456', rank=rank, world_size=2)
+            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[rank], find_unused_parameters=False)
             model_without_ddp = model.module
 
         optimizer = create_optimizer(
@@ -721,6 +726,8 @@ def main(args, ds_init):
     total_time = time.time() - start_time
     total_time_str = str(datetime.timedelta(seconds=int(total_time)))
     print('Training time {}'.format(total_time_str))
+
+    dist.destroy_process_group()
 
 
 if __name__ == '__main__':
