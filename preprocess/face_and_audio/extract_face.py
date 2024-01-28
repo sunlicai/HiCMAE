@@ -85,7 +85,7 @@ def copy_one_video(src_dir, tgt_dir):
 
 if __name__ == '__main__':
     # CAMER-D dataset (downloaded from: https://github.com/CheyneyComputerScience/CREMA-D)
-    dataset_root = 'path/to/CREMA-D'
+    dataset_root = './AC/Dataset/CREMA-D'
     video_dir = os.path.join(dataset_root, 'VideoFlash') # note: .avi
     img_size = 256
     file_ext = 'flv'
