@@ -25,23 +25,25 @@ import shutil
 -simalign output similarity aligned images of the tracked faces
 -nobadaligned if outputting similarity aligned images, do not output from frames where detection failed or is unreliable (thus saving some disk space)    
 """
-OPENFACE_EXE = './OpenFace_2.2.0_win_x64/FeatureExtraction.exe'
-
+OPENFACE_EXE = '/home/openface-build/build/bin/FeatureExtraction'
 def process_one_video(video_file, in_dir, out_dir, openface_exe=OPENFACE_EXE, img_size=112):
     # file_name = os.path.basename(os.path.splitext(video_file)[0])
     # Note: + '\\' is needed
-    file_name = os.path.splitext(video_file.replace(in_dir + '\\', ''))[0] # out dir has the same structure with in dir
+    file_name = os.path.splitext(video_file.replace(in_dir, ''))[0].lstrip('/') # out dir has the same structure with in dir
     out_dir = os.path.join(out_dir, file_name)
-    if os.path.exists(out_dir):
-        print(f'Note: "{out_dir}" already exist!')
+    if os.path.exists(out_dir) and os.listdir(out_dir):
+        #print(f'Note: "{out_dir}" already exist')
         return video_file
     else:
-        os.makedirs(out_dir)
+        if not os.path.exists(out_dir):
+            os.makedirs(out_dir)
+        cmd = [openface_exe, "-f", video_file, "-out_dir", out_dir, "-simalign", "-simsize", str(img_size), "-format_aligned", "jpg", "-nomask"]
+        subprocess.call(cmd, shell=False)
 
-    cmd = f'"{openface_exe}" -f "{video_file}" -out_dir "{out_dir}" -simalign -simsize {img_size} -format_aligned jpg -nomask'
-    print(cmd)
-    subprocess.call(cmd, shell=False)
-    return video_file
+        # cmd = f'"{openface_exe}" -f "{video_file}" -out_dir "{out_dir}" -simalign -simsize {img_size} -format_aligned jpg -nomask'
+        # print(cmd)
+        # subprocess.call(cmd, shell=False)
+        return video_file
 
 def main(video_dir, out_dir, openface_exe=OPENFACE_EXE, multi_process=True, video_template_path='*.mp4', img_size=112):
     #===============Need to be modified for different dataset===============
@@ -67,7 +69,7 @@ def main(video_dir, out_dir, openface_exe=OPENFACE_EXE, multi_process=True, vide
         #             print('When process "{}", exception "{}" occurred!'.format(video_file, e))
         #         else:
         #             print(f'\t"{video_file:<50}" done, rate of progress: {100.0 * count / n_files:3.0f}% ({count}/{n_files})')
-        Parallel(n_jobs=8)(delayed(process_one_video)(video_file, video_dir, out_dir, openface_exe, img_size) \
+        Parallel(n_jobs=4)(delayed(process_one_video)(video_file, video_dir, out_dir, openface_exe, img_size) \
                      for video_file in tqdm(video_files))
     else:
         for i, video_file in enumerate(video_files, 1):
@@ -78,9 +80,21 @@ def main(video_dir, out_dir, openface_exe=OPENFACE_EXE, multi_process=True, vide
     end_time = time.time()
     print('Time used for video face extraction: {:.1f} s'.format(end_time - start_time))
 
-def copy_one_video(src_dir, tgt_dir):
+import shutil
+import os
+
+import shutil
+import os
+
+def copy_one_video(src_dir, tgt_dir,counter):
+    if not os.path.exists(src_dir):
+        print(f'Source directory "{src_dir}" does not exist. Skipping.')
+        counter += 1
+        return
+    if os.path.exists(tgt_dir):
+        shutil.rmtree(tgt_dir)
     shutil.copytree(src_dir, tgt_dir)
-    print(f'Copy "{src_dir}" to "{tgt_dir}"')
+    print(f'Copied "{src_dir}" to "{tgt_dir}"')
 
 
 if __name__ == '__main__':
@@ -89,9 +103,13 @@ if __name__ == '__main__':
     video_dir = os.path.join(dataset_root, 'VideoFlash') # note: .avi
     img_size = 256
     file_ext = 'flv'
+    counter = 0
     video_template_path = f'*.{file_ext}'
     out_dir = os.path.join(video_dir, '../openface')
     # STEP 1: extract faces from videos using OpenFace
+    print('-----------------------------------------------')
+    print('Extracting faces from videos ...')
+    print('-----------------------------------------------')
     main(video_dir, out_dir, video_template_path=video_template_path, multi_process=True, img_size=img_size)
 
     # STEP 2: reorganize the extracted face directories
@@ -100,13 +118,26 @@ if __name__ == '__main__':
     count = 0
     src_dirs, tgt_dirs = [], []
     for sample_dir in os.scandir(src_root):
-            sample_name = sample_dir.name
-            tgt_dir = os.path.join(tgt_root, sample_name) # organize videos in the original way
-            src_dir = os.path.join(sample_dir, f'{sample_name}_aligned')
-            src_dirs.append(src_dir)
-            tgt_dirs.append(tgt_dir)
-            count += 1
-    print(f'Total videos: {count}.')
-    Parallel(n_jobs=16)(delayed(copy_one_video)(src_dir, tgt_dir) \
-                       for src_dir, tgt_dir in tqdm(zip(src_dirs, tgt_dirs)))
+        sample_name = sample_dir.name
+        tgt_dir = os.path.join(tgt_root, sample_name) # organize videos in the original way
+        src_dir = os.path.join(sample_dir, f'{sample_name}_aligned')
+        src_dirs.append(src_dir)
+        tgt_dirs.append(tgt_dir)
+        count += 1
 
+        # Check if the source directory is empty
+        # Apart from '1050_TSI_ANG_XX' to be empty
+
+
+        # if not os.listdir(src_dir):
+        #     raise Exception(f"Source directory '{src_dir}' is empty.")
+        
+    print('-----------------------------------------------')
+    print(f'Total videos: {count}.')
+    print('-----------------------------------------------')
+    print('Copying videos ...')
+    Parallel(n_jobs=16)(delayed(copy_one_video)(src_dir, tgt_dir,counter) \
+                       for src_dir, tgt_dir in tqdm(zip(src_dirs, tgt_dirs)))
+    print('-----------------------------------------------')
+    print(f'{counter} videos skipped.')
+    print('-----------------------------------------------')
