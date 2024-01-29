@@ -32,7 +32,7 @@ def process_one_video(video_file, in_dir, out_dir, openface_exe=OPENFACE_EXE, im
     file_name = os.path.splitext(video_file.replace(in_dir, ''))[0].lstrip('/') # out dir has the same structure with in dir
     out_dir = os.path.join(out_dir, file_name)
     if os.path.exists(out_dir) and os.listdir(out_dir):
-        #print(f'Note: "{out_dir}" already exist')
+        print(f'Note: "{out_dir}" already exist')
         return video_file
     else:
         if not os.path.exists(out_dir):
@@ -96,7 +96,7 @@ def copy_one_video(src_dir, tgt_dir,counter):
     shutil.copytree(src_dir, tgt_dir)
     print(f'Copied "{src_dir}" to "{tgt_dir}"')
 
-
+# test :/home/HiCMAE# /home/openface-build/build/bin/FeatureExtraction -f /home/HiCMAE/AC/Dataset/CREMA-D/VideoFlash/1074_IEO_HAP_MD.flv -out_dir /home/a -simalign -simsize 256 -format_aligned jpg -nomask
 if __name__ == '__main__':
     # CAMER-D dataset (downloaded from: https://github.com/CheyneyComputerScience/CREMA-D)
     dataset_root = './AC/Dataset/CREMA-D'
@@ -106,13 +106,13 @@ if __name__ == '__main__':
     counter = 0
     video_template_path = f'*.{file_ext}'
     out_dir = os.path.join(video_dir, '../openface')
-    # STEP 1: extract faces from videos using OpenFace
-    print('-----------------------------------------------')
-    print('Extracting faces from videos ...')
-    print('-----------------------------------------------')
-    main(video_dir, out_dir, video_template_path=video_template_path, multi_process=True, img_size=img_size)
+    # # STEP 1: extract faces from videos using OpenFace
+    # print('-----------------------------------------------')
+    # print('Extracting faces from videos ...')
+    # print('-----------------------------------------------')
+    # main(video_dir, out_dir, video_template_path=video_template_path, multi_process=True, img_size=img_size)
 
-    # STEP 2: reorganize the extracted face directories
+    # # STEP 2: reorganize the extracted face directories
     src_root = out_dir
     tgt_root = out_dir.replace('openface', 'face_aligned') # in fact, reorganized
     count = 0
