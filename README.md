@@ -5,6 +5,7 @@
 > University of Chinese Academy of Sciences & Institute of Automation, Chinese Academy of Sciences & Tsinghua University<br>
 
 ## 📰 News
+**[2024.03.20]** Our paper is accepted by Information Fusion. 
 **[2024.01.11]** We upload the initial code and pre-trained model. 
 
 
