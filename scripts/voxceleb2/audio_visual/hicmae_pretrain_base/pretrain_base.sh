@@ -7,7 +7,7 @@ fi
 DATA_PATH='./saved/data/voxceleb2/info_clean_av_new.csv'
 # batch_size can be adjusted according to number of GPUs
 # this script is for 4 GPUs (1 nodes x 4 GPUs)
-OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=6,7 python -m torch.distributed.launch --nproc_per_node=2 \
+OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 \
         --master_port 11120 \
         run_mae_pretraining_av.py \
         --data_path ${DATA_PATH} \
@@ -22,7 +22,7 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=6,7 python -m torch.distributed.launch --
         --encoder_depth_audio 10 \
         --decoder_depth_audio 4 \
         --encoder_fusion_depth 2 \
-        --batch_size 38 \
+        --batch_size 40 \
         --num_frames 16 \
         --sampling_rate 4 \
         --opt adamw \
@@ -39,5 +39,5 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=6,7 python -m torch.distributed.launch --
         --loss_weight 0.0025 \
         --inter_contrastive_temperature 0.07 \
         --use_frame_diff_as_target \
-#        >${OUTPUT_DIR}/nohup.out 2>&1 &
+        >${OUTPUT_DIR}/nohup.out 2>&1 &
 
