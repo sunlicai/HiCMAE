@@ -5,6 +5,8 @@
 > University of Chinese Academy of Sciences & Institute of Automation, Chinese Academy of Sciences & Tsinghua University<br>
 
 ## 📰 News
+**[2024.04.11]** We upload the pre-training code. 
+
 **[2024.03.20]** Our paper is accepted by Information Fusion. 
 
 **[2024.01.11]** We upload the initial code and pre-trained model. 
@@ -103,9 +105,15 @@ The annotation usually includes `train.csv` and `test.csv`. The format of `*.csv
     /data/ycs/AC/Dataset/CREMA-D/face_aligned/1019_DFA_FEA_XX /data/ycs/AC/Dataset/CREMA-D/AudioWAV/1019_DFA_FEA_XX.wav 2
     ```
 
-## 📍Pre-trained Model
+## 📍Pre-train HiCMAE
 
-Download the model pre-trained on VoxCeleb2 from [this link](https://drive.google.com/file/d/1mR2r-_LWmtTYl4pS_L3YlhKNCCnv_ZaE/view?usp=sharing) and put it into [this folder](saved/model/pretraining/voxceleb2/audio_visual/hicmae_pretrain_base).
+- VoxCeleb2
+
+    ```
+    sh scripts/voxceleb2/audio_visual/hicmae_pretrain_base/pretrain_base.sh
+    ```
+
+You can download our pre-trained model on VoxCeleb2 from [this link](https://drive.google.com/file/d/1mR2r-_LWmtTYl4pS_L3YlhKNCCnv_ZaE/view?usp=sharing) and put it into [this folder](saved/model/pretraining/voxceleb2/audio_visual/hicmae_pretrain_base).
 
 ## ⤴️ Fine-tuning with pre-trained models
 
