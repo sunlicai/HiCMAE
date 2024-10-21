@@ -5,6 +5,9 @@
 > University of Chinese Academy of Sciences & Institute of Automation, Chinese Academy of Sciences & Tsinghua University<br>
 
 ## 📰 News
+
+**[2024.10.21]** We upload the fine-tuned models on CREMA-D and MAFW. 
+
 **[2024.04.11]** We upload the pre-training code. 
 
 **[2024.03.20]** Our paper is accepted by Information Fusion. 
@@ -122,7 +125,7 @@ The annotation usually includes `train.csv` and `test.csv`. The format of `*.csv
     sh scripts/voxceleb2/audio_visual/hicmae_pretrain_base/cream-d/finetune_170.sh
     ```
     
-    The fine-tuned checkpoints and logs across five folds on DFEW are provided as follows: 
+    The fine-tuned checkpoints and logs across five folds on CREMA-D are provided as follows: 
     |  Fold    | UAR        | WR       |      Fine-tuned   Model            |
     | :------: | :--------: | :------: | :-----------------------:          |
     |  1       | 86.66      | 86.67    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EXf8jT_e7uFIpUIiuQISAGEBDuMdeZXM2L7pTN7VbDA_DA?e=qPx1Bk) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/ERtJlWmrrk5LuKycdrmlXFYBbGFdmvjI6oNvLf-6OCYZWA?e=j7YXkP) | 
@@ -138,6 +141,16 @@ The annotation usually includes `train.csv` and `test.csv`. The format of `*.csv
     sh scripts/voxceleb2/audio_visual/hicmae_pretrain_base/mafw/finetune_170.sh
     ```
     
+    The fine-tuned checkpoints and logs across five folds on MAFW are provided as follows: 
+    |  Fold    | UAR        | WR       |      Fine-tuned   Model            |
+    | :------: | :--------: | :------: | :-----------------------:          |
+    |  1       | 36.02      | 47.60    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EXPu0Nlku05LkOyXD7UrgKIBFEWMKpXee9JkQ9Tp3597kw?e=6irgNk) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/ES-eTQiMgSZKno9KyUZy1cgB5irFyRkGDIoLsChy7G9VmQ?e=XA3XUv) | 
+    |  2       | 41.57      | 55.10    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EcKoXaBqwG9IhRukKstH_4IBc8dpIWWl-fQQSiRx2B0OdA?e=hxYP06) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EVESyhEmuwJKpswfhfkWtsIBHVjsIoIVgi9BIP1LRl_KSw?e=0qzRMp) | 
+    |  3       | 46.46      | 60.10    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/Ec1DpC4iekxHsbn3Ixf1-QMB1wcTRv7R-Ba7XpKvtg5idg?e=SW0bDB) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/ER74xfvkeFFGtfPzPH9CHhAB_qtuDI_rdKKKN-f4ep05ZA?e=h7BHbM) | 
+    |  4       | 47.50      | 63.09    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EbA-glMilZBDmE3oytwHdWoBWF9yUD9-rMzyiwosnDbnwg?e=93gkOK) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EXgUG2jtGopElcHJKA3bSokB4p6gv1ds-CfXhE2AaAdEuQ?e=cOarQ3) | 
+    |  5       | 41.88      | 55.22    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EVuvCgeTE9xFlFP21ZCAFaYBQRS7LSeXKVCvLG6MT77NuA?e=0hwu3X) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EWpqPBE74IlIooG0JoOPcrABjxsS3iIsLiDeEbLJnllidA?e=ZNgeXl) |
+    |  Total   | 42.69      | 56.21    | - |
+
 
 ## ☎️ Contact 
 
