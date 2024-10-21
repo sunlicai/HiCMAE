@@ -121,7 +121,17 @@ The annotation usually includes `train.csv` and `test.csv`. The format of `*.csv
     ```
     sh scripts/voxceleb2/audio_visual/hicmae_pretrain_base/cream-d/finetune_170.sh
     ```
-  
+    
+    The fine-tuned checkpoints and logs across five folds on DFEW are provided as follows: 
+    |  Fold    | UAR        | WR       |      Fine-tuned   Model            |
+    | :------: | :--------: | :------: | :-----------------------:          |
+    |  1       | 86.66      | 86.67    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EXf8jT_e7uFIpUIiuQISAGEBDuMdeZXM2L7pTN7VbDA_DA?e=qPx1Bk) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/ERtJlWmrrk5LuKycdrmlXFYBbGFdmvjI6oNvLf-6OCYZWA?e=j7YXkP) | 
+    |  2       | 83.27      | 83.20    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EbU6et8b9DpBpyWI26lDhjsB2JdDwRt8yHOA0k5JNX0L-A?e=bdljdC) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/Ef_tG1Eh7nNOj5BV3ljvKMcBDWkzt17ytaUknSPgg28jBQ?e=rmjxTT) | 
+    |  3       | 87.23      | 87.19    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EelLU_bTRsZDkoNXDbw1q18BI9Yes-3TKt9zcCwqGJPsQg?e=UCA7ju) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EUIvB5E1029Atp0kmIaNsOEBIjFItoyI_B8WCCWxNCTRyw?e=olk2yS) | 
+    |  4       | 83.70      | 83.79    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EY8mercoIS9Koa18BiKlOesBGco7EkKW8It7y-3mUkWyeA?e=dctkfP) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EelA-2vHrOdBj2VFX5xWBwgBXGeHrLCKRCwC-ToLkQqVPA?e=Wfes6g) | 
+    |  5       | 83.88      | 83.79    | [log](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EU5dZKG1mHVHpN_W6-j9cwcBYk89-51rzGRGLkt4vMp3CA?e=YkPPZq) / [checkpoint](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/EaS5Lz94qLdErJPkXnIaHUUBO24c56cuaMIcMRRxppPAdw?e=ZpiGCy) |
+    |  Total   | 84.94      | 84.91    | - |
+
 - MAFW
 
     ```
