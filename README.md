@@ -115,7 +115,7 @@ The annotation usually includes `train.csv` and `test.csv`. The format of `*.csv
     ```
     sh scripts/voxceleb2/audio_visual/hicmae_pretrain_base/pretrain_base.sh
     ```
-  You can download our pre-trained model on VoxCeleb2 from [this link](https://drive.google.com/file/d/1mR2r-_LWmtTYl4pS_L3YlhKNCCnv_ZaE/view?usp=sharing) and put it into [this folder](saved/model/pretraining/voxceleb2/audio_visual/hicmae_pretrain_base).
+  You can download our pre-trained model on VoxCeleb2 from [this link](https://unioulu-my.sharepoint.com/:u:/g/personal/lsun24_univ_yo_oulu_fi/ESULFR9UGilPuLkGkc7dN1gBTNcE_p0JhtrZwshwzkbZwg?e=gZdf7Y) and put it into [this folder](saved/model/pretraining/voxceleb2/audio_visual/hicmae_pretrain_base).
 
 ## ⤴️ Fine-tuning with pre-trained models
 
@@ -172,4 +172,5 @@ If you think this project is helpful, please feel free to leave a star⭐️ and
   year={2024}
 }
 ```
+
 
