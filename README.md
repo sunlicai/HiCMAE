@@ -154,7 +154,7 @@ The annotation usually includes `train.csv` and `test.csv`. The format of `*.csv
 
 ## ☎️ Contact 
 
-If you have any questions, please feel free to reach me out at `sunlicai2019@ia.ac.cn`.
+If you have any questions, please feel free to reach me out at `licai.sun@oulu.fi`.
 
 ## 👍 Acknowledgements
 
@@ -172,6 +172,7 @@ If you think this project is helpful, please feel free to leave a star⭐️ and
   year={2024}
 }
 ```
+
 
 
 
